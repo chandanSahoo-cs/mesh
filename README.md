@@ -1,36 +1,32 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Mesh: Real-Time Communication Platform with Full-stack Collaboration
 
-## Getting Started
+## Overview
+**Mesh** is a modern full-stack communication platform, enabling real-time messaging, server-based collaboration, friend interactions, role-based permissions, and voice support. It leverages a monorepo setup for scalable development across multiple apps.
 
-First, run the development server:
+## Features
+- **Real-time Messaging**: Instant text and image communication across servers (Convex reactivity)
+- **Typing Indication**: Real time typing indication with channel and dm scope (Liveblocks)
+- **User presence**: A custom websocket server to mark the user presence 
+- **Server & Channel Structure**: Create servers with categorized channels (text, voice, etc.)
+- **Role-based Access Control**: Manage user permissions granularly with custom roles
+- **Threaded Conversations**: Support for message threads within channels and DMs
+- **Reactions**: Emoji reactions for both server and friend messages
+- **Friend System**: Send, accept, reject, or block friend requests
+- **Presence & Status**: Online/offline indicators, typing indicators, and user status
+- **Voice Communication**: Integrated global(you don't need to be in specific channel or dm to continue a call) voice room support (Livekit)
+- **Modular Convex Backend**: Scalable logic with fine-grained API and real-time database updates
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Technologies Used
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Frontend:
+- **Next.js (App Router)**: React framework with SSR, routing, and edge-ready rendering
+- **Tailwind CSS**: Utility-first styling
+- **Shadcn UI**: Component library based on Radix UI and Lucide icons
+- **Quill Editor**: For rich text editing (if used in messages or threads)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Real-Time & Backend:
+- **Convex**: Real-time backend with authentication, data modeling, and reactive queries
+- **Liveblocks**: Live presence tracking, room management, typing indicators
+- **LiveKit**: Audio rooms for voice channels
+- **Custom Websocket server** : For marking user's presence (online/offline)
